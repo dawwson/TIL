@@ -6,7 +6,7 @@
 
 ## Language
 
-- [TypeScript](https://github.com/dawwson/TIL/blob/main/typescript/TypeScript.md)
+- [TypeScript](https://github.com/dawwson/TIL/blob/main/language/TypeScript.md)
 
 ## Book Review
 
