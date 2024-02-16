@@ -1,4 +1,4 @@
-# TypeScript
+# TypeScript 장점과 특징
 
 ## TypeScript란 무엇인가?
 
