@@ -12,7 +12,8 @@ for (variable of iterable) {
 
 ### 열거 가능한 속성?
 
-- JS는 프로토타입 기반 객체 지향 언어이며, 프로토타입 체인을 통해 속성을 상속한다.
+- JS는 프로토타입 기반 객체 지향 언어이며, 프로토타입 체인을 통해 속성을 상속한다.  
+  <img width="461" alt="스크린샷 2024-02-27 오후 8 26 24" src="https://github.com/dawwson/TIL/assets/45624238/d920ef4a-56c6-48d9-9628-1beb9d8c730c">
 
 - JS의 모든 객체는 부모 역할의 객체와 연결되어 있어, 부모 객체의 프로퍼티 또는 메소드를 상속받아 사용할 수 있다. 이러한 부모 객체를 프로토타입(Prototype)이라 한다.
 
@@ -81,6 +82,8 @@ for (variable of iterable) {
 - 이터러블은 `Symbol.iterator` 메소드를 구현하거나 프로토타입 체인에 의해 상속한 객체이다.
 
 - Array, String, Map, Set, TypedArray(Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, Float32Array, Float64Array), DOM data structure(NodeList, HTMLCollection), Arguments는 ES6에서 제공하는 빌트인 이터러블이다.
+
+  <img width="576" alt="스크린샷 2024-02-27 오후 8 28 44" src="https://github.com/dawwson/TIL/assets/45624238/be127fa6-4ab5-4c48-9f44-c7de609f264e">
 
 <br>
 
