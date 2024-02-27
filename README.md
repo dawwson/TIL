@@ -11,6 +11,7 @@
 - JavaScript
 
   - [for...in vs for...of](https://github.com/dawwson/TIL/blob/main/language/javascript/for...in%20vs%20for...of.md)
+  - [일급 객체](https://github.com/dawwson/TIL/blob/main/language/javascript/%EC%9D%BC%EA%B8%89%20%EA%B0%9D%EC%B2%B4.md)
 
 - TypeScript
 
