@@ -3,7 +3,7 @@
 ## `for...in`
 
 ```
-for (variable of iterable) {
+for (variable in object) {
   statement;
 }
 ```
