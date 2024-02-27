@@ -9,6 +9,7 @@
 - 시간 복잡도는 O(N), 공간 복잡도는 O(1)이다.
 
 ## 동작 방식
+
 <img width="674" alt="스크린샷 2024-02-16 오후 1 26 59" src="https://github.com/dawwson/TIL/assets/45624238/a666da06-62c7-4f93-8292-9677e3604005">
 
 1. 입력 시퀀스 요소 m과 카운터 c를 0으로 초기화한다.
@@ -57,7 +58,7 @@ var majorityElement = function (arr) {
 
 > 1. 블로그
 >    - [Boyer-Moore 과반수 투표 알고리즘](https://sgc109.github.io/2020/11/30/boyer-moore-majority-vote-algorithm/)
-> 3. 위키백과
+> 2. 위키백과
 >    - [Boyer–Moore majority vote algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm)
-> 5. 관련 알고리즘 문제 - LeetCode 169번 Majority Element
+> 3. 관련 알고리즘 문제 - LeetCode 169번 Majority Element
 >    - [문제 풀이](https://github.com/dawwson/algorithm/blob/main/leetcode/easy/169.%20Majority%20Element.md)
