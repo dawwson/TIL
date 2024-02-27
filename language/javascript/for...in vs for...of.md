@@ -10,6 +10,8 @@ for (variable in object) {
 
 - `for...in` 문은 상속된 열거 가능한 속성들을 포함하여 객체에서 문자열로 키가 지정된 모든 열거 가능한 속성에 대해 반복한다.
 
+<br>
+
 ### 열거 가능한 속성?
 
 - JS는 프로토타입 기반 객체 지향 언어이며, 프로토타입 체인을 통해 속성을 상속한다.  
@@ -70,6 +72,8 @@ for (variable of iterable) {
 - `for...of` 문은 반복가능한 객체(Array, Map, Set, String, TypedArray, Arguments 객체 등)에 대해서 반복한다.
 
 - `[Symbol.iterator]` 속성이 있는 모든 컬렉션 요소에 대해 반복한다.
+
+<br>
 
 ### [Symbol.iterator] 속성?
 
