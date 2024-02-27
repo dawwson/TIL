@@ -8,7 +8,12 @@
 
 ## Language
 
+- JavaScript
+
+  - [for...in vs for...of](https://github.com/dawwson/TIL/blob/main/language/javascript/for...in%20vs%20for...of.md)
+
 - TypeScript
+
   - [TypeScript 장점과 특징](https://github.com/dawwson/TIL/blob/main/language/typescript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%9E%A5%EC%A0%90%EA%B3%BC%20%ED%8A%B9%EC%A7%95.md)
   - [TypeScript 타입](https://github.com/dawwson/TIL/blob/main/language/typescript/TypeScript%20%ED%83%80%EC%9E%85.md)
 
