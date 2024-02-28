@@ -1,5 +1,9 @@
 # Today I Learned Wiki
 
+## Data Structure
+
+- [해시 테이블](https://github.com/dawwson/TIL/blob/main/data-structure/%ED%95%B4%EC%8B%9C%20%ED%85%8C%EC%9D%B4%EB%B8%94.md)
+
 ## Algorithm
 
 - [알고리즘 복잡도](https://github.com/dawwson/TIL/blob/main/algorithm/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EB%B3%B5%EC%9E%A1%EB%8F%84.md)
