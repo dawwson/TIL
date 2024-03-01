@@ -82,11 +82,11 @@ type 새로운 타입 = 기존 타입
 (매개변수1: 타입, 매개변수2: 타입, ...) => 반환값 타입
 ```
 
-- 함수의 타입을 말한다.
+- 함수의 타입을 말한다. '함수 시그니처'라고도 한다.
 
 - 함수의 매개변수 타입과 반환 타입을 작성한다.
 
-- type을 사용하면 더 깔끔하게 정의할 수 있다.
+- `type`을 사용하면 더 깔끔하게 정의할 수 있다.
 
 - 예시
 
@@ -94,6 +94,114 @@ type 새로운 타입 = 기존 타입
   type Add = (a: number, b: number) => number;
 
   const add: Add = (a, b) => a + b;
+  ```
+
+### Overloading
+
+- 같은 이름의 함수가 매개변수의 개수나 타입이 다를 때, 반환 타입이 다를 때 오버로딩이라고 한다.
+- 여러 개의 call signature를 가질 수 있다.
+- 예시
+
+  ```ts
+  // ❌ Don't
+  type Add = {
+    (a: number, b: number): number;
+    (a: number, b: number, c: number): number;
+  };
+
+  // 또는
+
+  // ✅ Do: 반환 타입이 같다면 옵셔널 매개변수 사용을 권장한다.
+  type Add = {
+    (a: number, b: number, c?: number): number;
+  };
+
+  const add: Add = (a, b, c) => {
+    if (c) {
+      return a + b + c;
+    }
+    return a + b;
+  };
+  ```
+
+  <br>
+
+## Generic
+
+- 함수나 클래스의 선언 시점이 아닌, 사용 시점에 타입을 선언할 수 있는 방법을 제공한다.
+
+- 변수/함수명 뒤에 `<타입 변수 이름>`을 붙인 형태로 사용한다. 타입 변수의 이름은 아무거나 해도 상관없지만, 관습적으로 알파벳 대문자 한글자로 처리하는 편이다.(T, V, E, ...)
+
+- 라이브러리나 다른 개발자가 사용할 기능을 만들 때 유용하다.
+
+### 제네릭 함수 타입
+
+- 함수 오버로딩을 할 때 허용하는 고정 타입이 많아질수록 코드의 가독성이 떨어진다.
+
+  ```ts
+  // call signature
+  type SuperPrint = {
+    // concrete type: number, boolean, string
+    (arr: number[]): void;
+    (arr: boolean[]): void;
+    (arr: string[]): void;
+    (arr: (number | boolean)[]): void;
+  };
+
+  const superPrint: SuperPrint = (arr) => {
+    arr.forEach((i) => console.log(i));
+  };
+
+  superPrint([1, 2, 3, 4]);
+  superPrint([true, true, false]);
+  superPrint(["a", "b", "c"]);
+  superPrint([1, 2, true, false]);
+  ```
+
+- 이럴 때 제네릭을 사용하면 타입을 변수화하여 유연하게 함수를 사용할 수 있다.
+
+  ```ts
+  // 방법 1: type(또는 interface)으로 타입 지정
+  type SuperPrint = {
+    <T>(arr: T[]): T;
+  };
+  const superPrint: SuperPrint = (arr) => arr[0];
+
+  // 방법 2: 함수 선언식
+  function superPrint<T>(arr: T[]) {
+    return a[0];
+  }
+
+  // 방법 3: 함수 표현식
+  const superPrint = <T>(arr: T[]): T => arr[0];
+
+  const a = superPrint([1, 2, 3, 4]); // a: number
+  const b = superPrint([true, true, false]); // b: boolean
+  const c = superPrint(["a", "b", "c"]); // c: string
+  const d = superPrint([1, 2, true, false]); // d: number | boolean
+  ```
+
+### 제네릭 객체 타입
+
+- 객체에도 제네릭 타입을 적용할 수 있다.
+- 예시
+
+  ```ts
+  type Player<T> = {
+    name: string;
+    extraInfo: T;
+  };
+
+  type ExtraInfo = {
+    favoriteFood: string;
+  };
+
+  const nico: Player<ExtraInfo> = {
+    name: "nico",
+    extraInfo: {
+      favoriteFood: "kimchi",
+    },
+  };
   ```
 
 <br>
@@ -106,20 +214,30 @@ type 새로운 타입 = 기존 타입
 
     - 변수가 const로 선언되거나 readonly를 명시하고 있으면 초깃값을 항상 유지한다. 이런 변수를 변경할 수 없다는 의미로 '불변(immutable)' 변수라고 한다.
 
-  - 적용 대상 : 변수, 객체 프로퍼티, 인터페이스 프로퍼티, 클래스 프로퍼티, 함수의 매개변수 등
+- 적용 대상 : 변수, 객체 프로퍼티, 인터페이스 프로퍼티, 클래스 프로퍼티, 함수의 매개변수 등
 
-  - 예시
+  - 클래스 프로퍼티에 대해서, 값을 공개는 하고 싶지만 수정은 못하게 하고 싶을 때 readonly를 사용할 수도 있다.
 
-    ```ts
-    type Player = {
-      readonly name: string;
-    };
+- 예시 1
 
-    const makePlayer = (name: string): Player => ({ name });
+  ```ts
+  type Player = {
+    readonly name: string;
+  };
 
-    const player = makePlayer("kim");
-    player.name = "lee"; // ERROR
-    ```
+  const makePlayer = (name: string): Player => ({ name });
+
+  const player = makePlayer("kim");
+  player.name = "lee"; // ERROR
+  ```
+
+- 예시 2
+
+  ```ts
+  class Word {
+    constructor(public readonly term: string, public readonly def: string) {}
+  }
+  ```
 
 ### const와의 차이?
 
@@ -271,6 +389,7 @@ type 새로운 타입 = 기존 타입
 
 > 1. 블로그
 >    - [Understanding the Distinctions: never vs void](https://www.linkedin.com/pulse/understanding-distinctions-never-vs-void-shashank-shekhar)
+>    - [타입스크립트 Generic 타입 정복하기](https://inpa.tistory.com/entry/TS-%F0%9F%93%98-%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-Generic-%ED%83%80%EC%9E%85-%EC%A0%95%EB%B3%B5%ED%95%98%EA%B8%B0)
 > 2. 도서
 >    - Do it! 타입스크립트 프로그래밍
 > 3. 강의
