@@ -20,6 +20,7 @@
 - TypeScript
 
   - [TypeScript 장점과 특징](https://github.com/dawwson/TIL/blob/main/language/typescript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EC%9E%A5%EC%A0%90%EA%B3%BC%20%ED%8A%B9%EC%A7%95.md)
+  - [TypeScript 수동으로 설정하기](https://github.com/dawwson/TIL/blob/main/language/typescript/TypeScript%20%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.md)
   - [TypeScript 타입](https://github.com/dawwson/TIL/blob/main/language/typescript/TypeScript%20%ED%83%80%EC%9E%85.md)
 
 ## Book Review
