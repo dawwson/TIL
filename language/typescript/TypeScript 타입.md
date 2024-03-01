@@ -2,40 +2,30 @@
 
 ## Object
 
-### 객체 타입 지정 방법
+```ts
+변수명: { key1: 타입, key2: 타입, ... }
+```
 
+- 변수 선언문을 확장해 위와 같은 형태로 타입을 명시할 수 있다.
+- 타입 주석(type annotation)이라고 한다.
 - 예시
+
   ```ts
   const player: { name: string; age: number } = {
     name: "kim",
   };
   ```
 
-### Type Alias
-
-TODO:
-
-### Index signature
-
-TODO:
-
-<br>
-
-## 함수
-
-### 함수 타입 지정 방법
-
-TODO:
-
-### Call signature
-
-TODO:
-
 <br>
 
 ## optional
 
+```
+변수/프로퍼티명?: 타입
+```
+
 - 물음표(?)를 붙여서 특정 프로퍼티나 함수의 매개변수를 옵셔널로 만들 수 있다.
+
 - 예시
 
   ```ts
@@ -53,6 +43,57 @@ TODO:
 
   // ERROR
   if (player.age < 10) {...}
+  ```
+
+<br>
+
+## Type Alias
+
+```ts
+type 새로운 타입 = 기존 타입
+```
+
+- type 키워드로 기존에 존재하는 타입을 이름만 바꿔서 사용할 수 있게 해준다.
+
+- 타입을 재사용하고 싶을 때 사용할 수 있다.
+
+- 코드가 깔끔하고 명확해질 때까지만 사용하면 된다.
+
+- 예시
+
+  ```ts
+  type Age = number;
+
+  type Player = {
+    name: string;
+    age?: Age;
+  };
+
+  const player: Player = {
+    name: "es",
+  };
+  ```
+
+<br>
+
+## Call signature
+
+```
+(매개변수1: 타입, 매개변수2: 타입, ...) => 반환값 타입
+```
+
+- 함수의 타입을 말한다.
+
+- 함수의 매개변수 타입과 반환 타입을 작성한다.
+
+- type을 사용하면 더 깔끔하게 정의할 수 있다.
+
+- 예시
+
+  ```ts
+  type Add = (a: number, b: number) => number;
+
+  const add: Add = (a, b) => a + b;
   ```
 
 <br>
@@ -80,7 +121,7 @@ TODO:
     player.name = "lee"; // ERROR
     ```
 
-### const와의 차이
+### const와의 차이?
 
 - const 키워드가 있는데 readonly가 또 필요할까?
 
@@ -92,7 +133,7 @@ TODO:
 
   - 배열과 리터럴 객체는 const로 선언하더라도 그 안의 요소들을 변경할 수 있다.
 
-  - 배열의 요소와 리터럴 객체의 프로퍼티에도 readonly로 불변성을 줄 수 있다.
+  - 배열의 요소와 리터럴 객체의 프로퍼티에도 불변성을 주고 싶으면 readonly를 사용하면 된다.
 
 - 예시
 
@@ -173,12 +214,65 @@ TODO:
 
 <br>
 
-## never
+## void
 
-TODO:
+- 값을 반환하지 않는 함수의 반환 타입이다.
+
+- 함수의 반환 타입으로만 사용할 수 있다.
+
+- 어떠한 함수의 반환값
+
+- 예시
+  ```ts
+  function print(): void {
+    console.log("hi!");
+  }
+  ```
 
 <br>
 
-## void
+## never
 
-TODO:
+- 변수의 타입으로 사용되면 절대 발생할 수 없는 값이라는 의미이다.
+
+- 보통 함수의 반환 타입으로 사용되며, 함수가 결코 값을 반환하지 않음을 의미한다.
+
+- 주로 예외를 던지거나 무한 루프와 같은 작업을 하는 함수에서 반환 타입으로 사용된다.
+
+- 예시
+
+  ```ts
+  function fail(msg: string): never {
+    throw new Error(msg);
+  }
+
+  function fn(x: string | number) {
+    if (typeof x === "string") {
+      // do something
+    } else if (typeof x === "number") {
+      // do something else
+    } else {
+      x; // has type 'never'!
+    }
+  }
+  ```
+
+<br>
+
+### void vs never
+
+- void와 never 둘 다 반환값이 없다는 것은 같다.
+
+- void는 반환값을 생성하지 않고 작업을 수행하는 목적임을 의미하고, never는 함수가 정상적으로 종료되지 않음을 의미한다.
+
+<br>
+
+## 참고
+
+> 1. 블로그
+>    - [Understanding the Distinctions: never vs void](https://www.linkedin.com/pulse/understanding-distinctions-never-vs-void-shashank-shekhar)
+> 2. 도서
+>    - Do it! 타입스크립트 프로그래밍
+> 3. 강의
+>    - 노마드 코더 - 타입스크립트로 블록체인 만들기
+> 4. [타입스크립트 공식문서](https://www.typescriptlang.org/docs/handbook/2/functions.html#other-types-to-know-about)
