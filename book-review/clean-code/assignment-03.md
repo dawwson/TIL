@@ -4,7 +4,6 @@
 
 - 작가 : 로버트 C. 마틴
 - 출판사 : 인사이트
-- 읽은 기간 : 2024.01.27 ~
 
 <br>
 
@@ -76,5 +75,5 @@
 - ❌
 
 #### 이 책 왜 읽으시나요?
-<img width="674" alt="image" src="https://github.com/dawwson/TIL/assets/45624238/a6b63756-1f04-4cad-95c9-910aa5fdb0a0">
 
+<img width="674" alt="image" src="https://github.com/dawwson/TIL/assets/45624238/a6b63756-1f04-4cad-95c9-910aa5fdb0a0">
