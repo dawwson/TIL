@@ -10,6 +10,7 @@
 - [Boyer-Moore 과반수 투표 알고리즘](https://github.com/dawwson/TIL/blob/main/algorithm/Boyer-Moore%20%EA%B3%BC%EB%B0%98%EC%88%98%20%ED%88%AC%ED%91%9C%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
 - [플로이드 순환 탐지 알고리즘](https://github.com/dawwson/TIL/blob/main/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EC%88%9C%ED%99%98%20%ED%83%90%EC%A7%80%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
 - [투 포인터 알고리즘](https://github.com/dawwson/TIL/blob/main/algorithm/%ED%88%AC%20%ED%8F%AC%EC%9D%B8%ED%84%B0%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
+- [다이나믹 프로그래밍](https://github.com/dawwson/TIL/blob/main/algorithm/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md)
 
 ## Language
 
