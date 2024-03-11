@@ -25,6 +25,7 @@
   - [TypeScript 수동으로 설정하기](https://github.com/dawwson/TIL/blob/main/language/typescript/TypeScript%20%EC%88%98%EB%8F%99%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0.md)
   - [TypeScript 타입](https://github.com/dawwson/TIL/blob/main/language/typescript/TypeScript%20%ED%83%80%EC%9E%85.md)
   - [Class & Interface & Type](https://github.com/dawwson/TIL/blob/main/language/typescript/Class%20%26%20Interface%20%26%20Type.md)
+  - [Declaration File & JSDoc](https://github.com/dawwson/TIL/blob/main/language/typescript/Declaration%20File%20%26%20JSDoc.md)
 
 ## Book Review
 
