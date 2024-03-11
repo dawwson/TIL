@@ -57,7 +57,6 @@
 ### 1. tsconfig.json 파일에 "allowJs": true 옵션 추가
 
 ```json
-// tsconfig.json
 {
   "include": ["src"],
   "compilerOptions": {
