@@ -8,6 +8,8 @@
 
 - 시간 복잡도는 O(N), 공간 복잡도는 O(1)이다.
 
+<br>
+
 ## 동작 방식
 
 <img width="674" alt="스크린샷 2024-02-16 오후 1 26 59" src="https://github.com/dawwson/TIL/assets/45624238/a666da06-62c7-4f93-8292-9677e3604005">
@@ -33,6 +35,8 @@
 - 두 사람이 선택한 메뉴가 다르다면 손 잡고 교실을 나간다.
 - 교실에 남아있는 학생이 고른 메뉴로 최종 선택한다.
 
+<br>
+
 ## 소스 코드 (JS)
 
 ```js
@@ -53,6 +57,8 @@ var majorityElement = function (arr) {
   return candidate;
 };
 ```
+
+<br>
 
 ## 참고
 
