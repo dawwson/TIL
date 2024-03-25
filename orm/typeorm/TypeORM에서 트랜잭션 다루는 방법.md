@@ -77,7 +77,8 @@
 
   - DataSource 인스턴스를 생성하여 초기화할 때 EntityManagerFactory의 create 메서드가 실행되고, 새로운 EntityManager 인스턴스가 DataSource 인스턴스의 manager 프로퍼티에 할당된다.
 
-    [이미지 1]
+    <img width="525" alt="1" src="https://github.com/dawwson/TIL/assets/45624238/4e2fd345-445b-4506-be22-da86a6487779">
+
 
 <br>
 
@@ -119,22 +120,27 @@
 
   - DataSource 인스턴스를 생성할 때 수행되는 생성자 함수 내부에서 새로운 EntityManager를 생성하여 manager 프로퍼티에 할당한다
 
-    [이미지 2]
+    <img width="517" alt="2" src="https://github.com/dawwson/TIL/assets/45624238/4cc9f78f-c636-4f1c-8f61-a03a80dcd5cd">
+
 
   - DataSource 클래스의 transaction 메소드에서는, 현재 DataSource 인스턴스의 manager 프로퍼티의 transaction 메소드를 수행한다.
 
-    [이미지 3]
+    <img width="491" alt="3" src="https://github.com/dawwson/TIL/assets/45624238/3d50208f-2c8d-4ec8-9a77-26ede16b95c2">
+
 
 - 주의해야 할 점은 쿼리를 수행하는 코드를 작성할 때 콜백 함수의 매개변수로 주어지는 EntityManager를 사용해야 한다는 것이다.
 
   - transaction 메소드의 내부를 살펴보면, 새로운 QueryRunner를 생성한다.
 
-    [이미지 4]
+    <img width="831" alt="4" src="https://github.com/dawwson/TIL/assets/45624238/c0daf087-bc67-4624-9ad3-a23009539b49">
+
 
   - DataSource 클래스의 createQueryRunner 메소드를 따라가보면, 현재 DBMS 드라이버에 맞는 QueryRunner를 생성한다. 생성된 QueryRunner의 manager 프로퍼티에 새로운 EntityManager 객체를 할당한다.
 
-    [이미지 5]
-    [이미지 6]
+    <img width="459" alt="5" src="https://github.com/dawwson/TIL/assets/45624238/a8bfbb01-9c51-441e-addd-3e18edb89440">
+
+    <img width="657" alt="6" src="https://github.com/dawwson/TIL/assets/45624238/16f59ea4-ee2b-462e-81b2-197a7968de17">
+
 
   - 콜백함수로 전달되는 EntityManager는 DataSource에 있는 전역 EntityManager가 아니라, QueryRunner의 EntityManager이다.
 
@@ -199,7 +205,8 @@
 
 - 0.2.x 버전에서 `Connection`은 0.3.0 버전부터 deprecated 되었고, 지금의 `DataSource`로 이름이 바뀌었다. [[참고]](https://typeorm.io/changelog#features-16)
 
-  [이미지 7]
+  <img width="813" alt="7" src="https://github.com/dawwson/TIL/assets/45624238/b975222f-1905-4dfd-a168-b21fd07f392c">
+
 
 - TypeORM 개발자가 올린 issue를 보면, Connection이라는 이름이 적절하지 않으며 DataSource로 변경해야 한다고 이야기한다.
 
