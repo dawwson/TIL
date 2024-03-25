@@ -28,6 +28,11 @@
   - [Class & Interface & Type](https://github.com/dawwson/TIL/blob/main/language/typescript/Class%20%26%20Interface%20%26%20Type.md)
   - [Declaration File & JSDoc](https://github.com/dawwson/TIL/blob/main/language/typescript/Declaration%20File%20%26%20JSDoc.md)
 
+## ORM
+
+- TypeORM
+  - [TypeORM에서 트랜잭션 다루는 방법](https://github.com/dawwson/TIL/blob/main/orm/typeorm/TypeORM%EC%97%90%EC%84%9C%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20%EB%8B%A4%EB%A3%A8%EB%8A%94%20%EB%B0%A9%EB%B2%95.md)
+
 ## Book Review
 
 - 클린 코드  
