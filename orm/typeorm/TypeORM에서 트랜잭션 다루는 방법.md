@@ -79,7 +79,6 @@
 
     <img width="525" alt="1" src="https://github.com/dawwson/TIL/assets/45624238/4e2fd345-445b-4506-be22-da86a6487779">
 
-
 <br>
 
 ### Query Runner
@@ -122,25 +121,21 @@
 
     <img width="517" alt="2" src="https://github.com/dawwson/TIL/assets/45624238/4cc9f78f-c636-4f1c-8f61-a03a80dcd5cd">
 
-
   - DataSource 클래스의 transaction 메소드에서는, 현재 DataSource 인스턴스의 manager 프로퍼티의 transaction 메소드를 수행한다.
 
     <img width="491" alt="3" src="https://github.com/dawwson/TIL/assets/45624238/3d50208f-2c8d-4ec8-9a77-26ede16b95c2">
 
-
-- 주의해야 할 점은 쿼리를 수행하는 코드를 작성할 때 콜백 함수의 매개변수로 주어지는 EntityManager를 사용해야 한다는 것이다.
+- 주의해야 할 점은 콜백 함수의 매개변수로 주어지는 EntityManager를 사용하여 쿼리를 수행해야 한다는 것이다.
 
   - transaction 메소드의 내부를 살펴보면, 새로운 QueryRunner를 생성한다.
 
     <img width="831" alt="4" src="https://github.com/dawwson/TIL/assets/45624238/c0daf087-bc67-4624-9ad3-a23009539b49">
-
 
   - DataSource 클래스의 createQueryRunner 메소드를 따라가보면, 현재 DBMS 드라이버에 맞는 QueryRunner를 생성한다. 생성된 QueryRunner의 manager 프로퍼티에 새로운 EntityManager 객체를 할당한다.
 
     <img width="459" alt="5" src="https://github.com/dawwson/TIL/assets/45624238/a8bfbb01-9c51-441e-addd-3e18edb89440">
 
     <img width="657" alt="6" src="https://github.com/dawwson/TIL/assets/45624238/16f59ea4-ee2b-462e-81b2-197a7968de17">
-
 
   - 콜백함수로 전달되는 EntityManager는 DataSource에 있는 전역 EntityManager가 아니라, QueryRunner의 EntityManager이다.
 
@@ -207,7 +202,6 @@
 
   <img width="813" alt="7" src="https://github.com/dawwson/TIL/assets/45624238/b975222f-1905-4dfd-a168-b21fd07f392c">
 
-
 - TypeORM 개발자가 올린 issue를 보면, Connection이라는 이름이 적절하지 않으며 DataSource로 변경해야 한다고 이야기한다.
 
 - 이전의 Connection이라는 명칭은 실제로 connection을 의미하지 않으며, 그저 DBMS 연결 설정에 관한 객체일 뿐이다. 실제 connection을 의미하는 것은 QueryRunner이다.
@@ -220,7 +214,7 @@
 
   - TypeORM에도 영속성 컨텍스트, 1차 캐시의 개념이 있는지는 잘 모르겠다. 공식문서 상에서는 영속성 컨텍스트의 역할(1차 캐시에 엔티티 영속화)을 하는 개념은 찾을 수 없었다.
 
-- TypeORM의 여러 개념들은 상대적으로 역사가 더 오래된 Java와 JPA에서 많은 부분 차용해서 만들었다고 생각한다. NodeJS에서 사용할 수 있는 또 다른 ORM 기술 중 하나인 Prisma에서도 DataSource라는 개념이 존재한다.
+- TypeORM의 여러 개념들은 상대적으로 역사가 더 오래된 Java와 JPA에서 많은 부분 차용해서 만들었다고 생각한다. NodeJS에서 사용할 수 있는 또 다른 ORM 기술 중 하나인 Prisma에서도 JPA, TypeORM에서의 DataSource와 같은 의미로 DataSource 개념이 존재한다.
 
 <br>
 
@@ -238,3 +232,5 @@
 >    - [JDBC와 DataSource 이해하기](https://tecoble.techcourse.co.kr/post/2023-06-28-JDBC-DataSource/)
 >    - [커넥션 풀이란 (Connection Pool)](https://shuu.tistory.com/130)
 >    - [[DB] 커넥션 풀(Connection Pool)과 데이터소스(DataSource)](https://dangdangee.tistory.com/entry/DB-%EC%BB%A4%EB%84%A5%EC%85%98-%ED%92%80Connection-Pool%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%86%8C%EC%8A%A4DataSource#google_vignette)
+> 3. Prisma 공식문서
+>    - [Data sources](https://www.prisma.io/docs/orm/prisma-schema/overview/data-sources)
