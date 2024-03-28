@@ -1,4 +1,4 @@
-# Docker Compose로 MongoDB 실행 환경 구성하기
+# Docker Compose로 MongoDB 개발 환경 구성하기
 
 - Docker Compose로 MongoDB를 실행하는 방법을 정리하였다.
 
