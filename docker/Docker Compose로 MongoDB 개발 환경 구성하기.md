@@ -240,6 +240,8 @@ db.createUser({
 
   - 백엔드에서 사용하기 위해 read, write 역할을 가진 사용자를 admin 데이터베이스에 추가하였으므로 `?authSource=admin`을 URI에 붙여주어야 한다.
 
+<br>
+
 ## 참고
 
 > 1. Docker
