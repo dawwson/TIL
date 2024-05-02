@@ -21,7 +21,7 @@
 - `docker-compose.yml`은 장황한 도커 실행 옵션을 미리 적어둔 문서라고 볼 수 있다.
 
 ```yml
-version: "3.8"
+# version: "3.8" => 삭제!
 
 services:
   db:
@@ -51,6 +51,8 @@ version: "3.8"
 - 규격에 따라 지원하는 옵션이 달라지는데, 버전3부터는 '3'이라고만 적으면 3으로 시작하는 최신 버전을 사용한다. [[참고]](https://docs.docker.com/compose/compose-file/compose-versioning/)
 
   - 다만, 버전2에서는 '2' = '2.0'을 의미한다.
+
+  - [+] **version을 명시하면 `version is obsolete` 라는 경고가 발생하는데, 해당 라인을 삭제해줘야 한다.** Docker Compose에서 더이상 version을 사용하지 않는다고 한다.
 
 ### services
 
